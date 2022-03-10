@@ -27,4 +27,17 @@ class ParamsController < ApplicationController
     render json: {message_to_user: output_message}
   end
 
+  def url_segment
+    user_number_choice = params["this_is_a_variable"].to_i
+    winning_number = 36
+    if user_number_choice < winning_number
+      output_message = "You guessed too low, guess higher!"
+    elsif user_number_choice > winning_number
+      output_message = "You guesed too high, guess lower!"
+    else
+      output_message = "You guessed it! You win!"
+    end
+    render json: {message_to_user: output_message}
+  end
+
 end
