@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   get "/url_segment_params/:this_is_a_variable" => "params#url_segment"
 
+  post "/body_params" => "params#body_params"
+
 
 end
